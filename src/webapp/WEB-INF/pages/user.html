@@ -6,17 +6,17 @@
     <title>User</title>
 </head>
 <body>
-    <form th:action="@{/{userId}/update(userId=${user.id})}" method="post" th:object="${user}">
-        <label for="firstName">Имя:
-         <input id="firstName" type="text" name="firstName" th:value="*{firstName}">
-        </label> <br>
-        <label for="lastName">Фамилия:
-            <input id="lastName" type="text" name="lastName" th:value="*{lastName}">
-        </label> <br>
-        <label for="email">Почта:
-            <input id="email" type="text" name="email" th:value="*{email}">
-        </label> <br>
-        <button type="submit"> Сохранить </button>
-    </form>
+<form th:action="@{/{userId}/update(userId=${user.id})}" method="post" th:object="${user}">
+    <label for="firstName">Имя:
+        <input id="firstName" type="text" name="firstName" th:value="*{firstName}">
+    </label> <br>
+    <label for="lastName">Фамилия:
+        <input id="lastName" type="text" name="lastName" th:value="*{lastName}">
+    </label> <br>
+    <label for="email">Почта:
+        <input id="email" type="text" name="email" th:value="*{email}">
+    </label> <br>
+    <button type="submit"> Сохранить</button>
+</form>
 </body>
 </html>

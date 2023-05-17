@@ -19,10 +19,12 @@
         <td th:text="${user.getFirstName()}"/>
         <td th:text="${user.getLastName()}"/>
         <td th:text="${user.getEmail()}"/>
-        <td> <div> <a th:href="@{/{id}(id=${user.id})}" th:text="Изменить"> </a> </div> </td>
+        <td>
+            <div><a th:href="@{/{id}(id=${user.id})}" th:text="Изменить"> </a></div>
+        </td>
         <td>
             <form th:action="@{/{userId}/delete(userId=${user.id})}" method="post">
-                <button type="submit"> Удалить </button>
+                <button type="submit"> Удалить</button>
             </form>
         </td>
     </tr>
@@ -39,7 +41,7 @@
     <label for="email">Электронная почта:
         <input id="email" type="text" name="email">
     </label> <br>
-    <button type="submit"> Добавить </button>
+    <button type="submit"> Добавить</button>
 </form>
 </body>
 </html>

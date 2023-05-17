@@ -21,7 +21,9 @@ import java.util.Properties;
 public class AppConfig {
     private final Environment env;
 
-    public AppConfig(Environment env) {this.env = env;}
+    public AppConfig(Environment env) {
+        this.env = env;
+    }
 
     @Bean
     public DataSource getDataSource() {
@@ -32,12 +34,14 @@ public class AppConfig {
         dataSource.setPassword(env.getRequiredProperty("db.password"));
         return dataSource;
     }
+
     @Bean
     public JpaTransactionManager getTransactionManager() {
         JpaTransactionManager transactionManager = new JpaTransactionManager();
         transactionManager.setEntityManagerFactory(getEntityManagerFactory().getObject());
         return transactionManager;
     }
+
     @Bean
     public LocalContainerEntityManagerFactoryBean getEntityManagerFactory() {
         LocalContainerEntityManagerFactoryBean em = new LocalContainerEntityManagerFactoryBean();
